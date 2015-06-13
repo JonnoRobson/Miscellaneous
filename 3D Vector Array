@@ -5,19 +5,27 @@ using namespace std;
 int main()
 {
 	int testNum;
-
-	vector< vector< vector<int> > > testThree;
-	vector< vector<int> > emptyTwoDim(1, vector<int>(1, 0));
-	vector<int> emptyOneDim(1, 0);
-
-	testThree.push_back(emptyTwoDim);
-
-	testThree[0].push_back(emptyOneDim);
-
-	testThree[0][1].push_back(2);
-
 	
-	testNum = testThree[0][1][1];
+	//Create initial 3D Vector Array
+	vector< vector< vector<int> > > testThree;
+	
+	//Create an 'empty' 2D vector array
+	vector< vector<int> > emptyTwoDim(1, vector<int>(1, 0));
+	
+	//Create an 'empty' 1D vector array
+	vector<int> emptyOneDim(1, 0);
+	
+	//Increase i in testThree[i]
+	testThree.push_back(emptyTwoDim);
+	
+	//Increase i in testThree[0][i]
+	testThree[0].push_back(emptyOneDim);
+	
+	//Increase i in testThree[0][0][i]
+	testThree[0][0].push_back(2);
+
+	//testNum should equal 2
+	testNum = testThree[0][0][1];
 
 	return 1;
 
